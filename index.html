@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XFit Gym Alexandria - Premium Fitness Experience</title>
+    <meta name="description" content="XFit Gym Alexandria - Premium fitness experience for all levels. Personal training, CrossFit, Calisthenics and more in Alexandria, Egypt.">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/Hero.png');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+        }
+
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 50px;
+            height: 3px;
+            background-color: #FF0000;
+        }
+
+        .program-card {
+            transition: all 0.3s ease;
+        }
+
+        .program-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .trainer-card {
+            transition: all 0.3s ease;
+        }
+
+        .trainer-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .icon-box {
+            transition: all 0.3s ease;
+        }
+
+        .icon-box:hover {
+            transform: translateY(-5px);
+            background-color: #FF0000;
+            color: white;
+        }
+
+        .icon-box:hover i {
+            color: white;
+        }
+
+        .btn-primary {
+            background-color: #FF0000;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #CC0000;
+        }
+
+        .navbar-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #FF0000;
+            transition: width 0.3s ease;
+        }
+
+        .navbar-link:hover:after {
+            width: 100%;
+        }
+
+        .contact-info i {
+            color: #FF0000;
+        }
+
+        .schedule-table th {
+            background-color: #333;
+            color: white;
+        }
+
+        .schedule-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .gallery-img {
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .gallery-img:hover {
+            transform: scale(1.03);
+        }
+
+        .sticky-navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .text-primary {
+            color: #FF0000;
+        }
+        
+        .bg-primary {
+            background-color: #FF0000;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                height: 60vh;
+            }
+
+            .schedule-table {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="sticky-navbar bg-white shadow-md py-4">
+        <div class="container mx-auto px-6 flex items-center justify-between">
+            <div class="text-3xl font-bold tracking-tight">
+                <span class="text-black">XFIT</span><span class="text-primary">GYM</span>
+            </div>
+            <div class="hidden md:flex space-x-10">
+                <a href="#home" class="navbar-link font-medium hover:text-primary">Home</a>
+                <a href="#about" class="navbar-link font-medium hover:text-primary">About</a>
+                <a href="#programs" class="navbar-link font-medium hover:text-primary">Programs</a>
+                <a href="#trainers" class="navbar-link font-medium hover:text-primary">Trainers</a>
+                <a href="#schedule" class="navbar-link font-medium hover:text-primary">Schedule</a>
+                <a href="#contact" class="navbar-link font-medium hover:text-primary">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button class="focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero flex items-center">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl">
+                <h1 class="text-5xl font-bold text-white mb-6 leading-tight">Alexandria's Premium Fitness Experience</h1>
+                <p class="text-xl text-gray-200 mb-8">Achieve your fitness goals with our state-of-the-art facilities and expert trainers. XFit Gym — Where Transformation Happens.</p>
+                <div class="flex space-x-4">
+                    <a href="#contact" class="btn-primary px-8 py-3 rounded-full font-medium text-lg">Join Now</a>
+                    <a href="#programs" class="border-2 border-white text-white px-8 py-3 rounded-full font-medium text-lg hover:bg-white hover:text-gray-900 transition duration-300">Explore Programs</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h2 class="section-title text-4xl font-bold">About XFIT GYM</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Welcome to XFit Gym, Alexandria's premier fitness destination where excellence meets dedication. Located in the heart of Alexandria, we provide a premium fitness experience for all levels.
+                    </p>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        At XFit Gym, we believe that real change starts with the right coach. Our facility is more than just a gym—it's a community of motivated individuals and expert trainers committed to transforming lives through fitness.
+                    </p>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Whether you're just beginning your fitness journey or you're an experienced athlete, our state-of-the-art equipment and diverse range of programs ensure that everyone can find their perfect workout routine.
+                    </p>
+                    <div class="flex space-x-4 mt-8">
+                        <div class="text-center">
+                            <span class="block text-4xl font-bold text-primary">7+</span>
+                            <span class="text-gray-600">Expert Trainers</span>
+                        </div>
+                        <div class="text-center">
+                            <span class="block text-4xl font-bold text-primary">15+</span>
+                            <span class="text-gray-600">Fitness Programs</span>
+                        </div>
+                        <div class="text-center">
+                            <span class="block text-4xl font-bold text-primary">1000+</span>
+                            <span class="text-gray-600">Happy Members</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-5/12 flex justify-center">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-primary rounded-lg transform translate-x-4 translate-y-4"></div>
+                        <div class="relative z-10 bg-white p-2 rounded-lg shadow-lg">
+                            <div class="w-full h-96 rounded-lg overflow-hidden">
+                                <img src="images/about.png" alt="XFit Gym Facility" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-24 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Why Choose XFit Gym</h2>
+                <p class="max-w-2xl mx-auto text-gray-600">We're dedicated to providing an exceptional fitness experience with top-notch facilities and expert guidance.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white rounded-lg p-8 shadow-md icon-box">
+                    <div class="text-center">
+                        <i class="fas fa-dumbbell text-4xl text-primary mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">State-of-the-art Equipment</h3>
+                        <p class="text-gray-600">Top-quality machines and free weights for optimal workouts.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg p-8 shadow-md icon-box">
+                    <div class="text-center">
+                        <i class="fas fa-user-friends text-4xl text-primary mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Expert Trainers</h3>
+                        <p class="text-gray-600">Certified professionals dedicated to your fitness success.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg p-8 shadow-md icon-box">
+                    <div class="text-center">
+                        <i class="fas fa-calendar-alt text-4xl text-primary mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Flexible Scheduling</h3>
+                        <p class="text-gray-600">Separate sessions for men and women, open daily.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg p-8 shadow-md icon-box">
+                    <div class="text-center">
+                        <i class="fas fa-users text-4xl text-primary mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Supportive Community</h3>
+                        <p class="text-gray-600">A motivating environment that feels like your second home.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Our Premium Facility</h2>
+                <p class="max-w-2xl mx-auto text-gray-600">Experience our state-of-the-art equipment and modern training spaces.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="relative group overflow-hidden rounded-lg shadow-lg">
+                    <img src="images/Gym images/gym1.png" alt="XFit Gym Facility" class="w-full h-80 object-cover transform group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <p class="text-white text-xl font-bold">Main Training Area</p>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-lg shadow-lg">
+                    <img src="images/Gym images/gym2.png" alt="XFit Gym Equipment" class="w-full h-80 object-cover transform group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <p class="text-white text-xl font-bold">Premium Equipment</p>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-lg shadow-lg">
+                    <img src="images/Gym images/gym3.png" alt="XFit Gym Space" class="w-full h-80 object-cover transform group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <p class="text-white text-xl font-bold">Training Space</p>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-lg shadow-lg">
+                    <img src="images/Gym images/gym4.png" alt="XFit Gym Area" class="w-full h-80 object-cover transform group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <p class="text-white text-xl font-bold">Weight Training Zone</p>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-lg shadow-lg">
+                    <img src="images/Gym images/gym5.png" alt="XFit Gym Facility" class="w-full h-80 object-cover transform group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <p class="text-white text-xl font-bold">Modern Equipment</p>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-lg shadow-lg">
+                    <img src="images/Gym images/gym6.png" alt="XFit Gym Space" class="w-full h-80 object-cover transform group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <p class="text-white text-xl font-bold">Training Environment</p>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-lg shadow-lg">
+                    <img src="images/Gym images/gym7.png" alt="XFit Gym Area" class="w-full h-80 object-cover transform group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <p class="text-white text-xl font-bold">Premium Facility</p>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-lg shadow-lg">
+                    <img src="images/Gym images/gym8.png" alt="XFit Gym Equipment" class="w-full h-80 object-cover transform group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <p class="text-white text-xl font-bold">State-of-the-art Equipment</p>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-lg shadow-lg">
+                    <img src="images/Gym images/gym9.png" alt="XFit Gym Space" class="w-full h-80 object-cover transform group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <p class="text-white text-xl font-bold">Training Area</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Our Training Programs</h2>
+                <p class="max-w-2xl mx-auto text-gray-600">Discover a variety of specialized fitness programs designed to help you reach your goals.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg overflow-hidden shadow-md program-card">
+                    <div class="h-56 bg-gray-300 flex items-center justify-center">
+                        <i class="fas fa-dumbbell text-5xl text-gray-500"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Personal Training</h3>
+                        <p class="text-gray-600 mb-4">One-on-one sessions with our expert trainers focused on your specific goals and needs. Every session has purpose, progress & power.</p>
+                        <a href="programs/personal-training.html" class="inline-block text-primary font-medium hover:underline">Learn More →</a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg overflow-hidden shadow-md program-card">
+                    <div class="h-56 bg-gray-300 flex items-center justify-center">
+                        <i class="fas fa-running text-5xl text-gray-500"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">CrossFit Training</h3>
+                        <p class="text-gray-600 mb-4">High-intensity functional movements that combine gymnastics, weightlifting, and cardio for overall fitness improvement.</p>
+                        <a href="programs/crossfit.html" class="inline-block text-primary font-medium hover:underline">Learn More →</a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg overflow-hidden shadow-md program-card">
+                    <div class="h-56 bg-gray-300 flex items-center justify-center">
+                        <i class="fas fa-child text-5xl text-gray-500"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Calisthenics</h3>
+                        <p class="text-gray-600 mb-4">Bodyweight strength training focusing on improving strength, flexibility, agility, and coordination. Available for adults and kids.</p>
+                        <a href="programs/calisthenics.html" class="inline-block text-primary font-medium hover:underline">Learn More →</a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg overflow-hidden shadow-md program-card">
+                    <div class="h-56 bg-gray-300 flex items-center justify-center">
+                        <i class="fas fa-heartbeat text-5xl text-gray-500"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Weight Loss Programs</h3>
+                        <p class="text-gray-600 mb-4">Specialized training and nutrition guidance designed specifically to help you achieve your weight loss goals effectively.</p>
+                        <a href="programs/weight-loss.html" class="inline-block text-primary font-medium hover:underline">Learn More →</a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg overflow-hidden shadow-md program-card">
+                    <div class="h-56 bg-gray-300 flex items-center justify-center">
+                        <i class="fas fa-dumbbell text-5xl text-gray-500"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Bodybuilding</h3>
+                        <p class="text-gray-600 mb-4">Comprehensive bodybuilding training programs designed to help you build muscle mass, improve strength, and achieve your ideal physique.</p>
+                        <a href="programs/bodybuilding.html" class="inline-block text-primary font-medium hover:underline">Learn More →</a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg overflow-hidden shadow-md program-card">
+                    <div class="h-56 bg-gray-300 flex items-center justify-center">
+                        <i class="fas fa-female text-5xl text-gray-500"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Women's Only Sessions</h3>
+                        <p class="text-gray-600 mb-4">Dedicated training times exclusively for women in a comfortable, supportive environment.</p>
+                        <a href="#contact" class="inline-block text-primary font-medium hover:underline">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trainers Section -->
+    <section id="trainers" class="py-24 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Our Expert Trainers</h2>
+                <p class="max-w-2xl mx-auto text-gray-600">Meet our team of certified fitness professionals dedicated to helping you achieve your goals.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg overflow-hidden shadow-md trainer-card">
+                    <div class="h-72 bg-gray-300 flex items-center justify-center">
+                        <img src="images/Hany.png" alt="Coach Hany" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Coach Hany</h3>
+                        <p class="text-gray-500 mb-3">Personal Trainer & Transformation Specialist</p>
+                        <p class="text-gray-600 mb-4">With Coach Hany, every session has purpose, progress & power. He's not just training you — he's transforming you.</p>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-gray-500 hover:text-primary"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-primary"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-primary"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg overflow-hidden shadow-md trainer-card">
+                    <div class="h-72 bg-gray-300 flex items-center justify-center">
+                        <img src="images/Waly.png" alt="Coach Waly" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Coach Waly</h3>
+                        <p class="text-gray-500 mb-3">Strength & Conditioning Coach</p>
+                        <p class="text-gray-600 mb-4">Coach Waly isn't just a trainer — he's your true partner on the road to your strongest self. Your journey starts with trust.</p>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-gray-500 hover:text-primary"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-primary"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-primary"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg overflow-hidden shadow-md trainer-card">
+                    <div class="h-72 bg-gray-300 flex items-center justify-center">
+                        <i class="fas fa-user-circle text-6xl text-gray-500"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Coach Salah</h3>
+                        <p class="text-gray-500 mb-3">CrossFit & Calisthenics Specialist</p>
+                        <p class="text-gray-600 mb-4">Dive into a transformative journey with our CrossFit coach Salah. Expert in guiding athletes at all levels.</p>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-gray-500 hover:text-primary"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-primary"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-primary"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section id="schedule" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Training Schedule</h2>
+                <p class="max-w-2xl mx-auto text-gray-600">We offer flexible timing with separate sessions for men and women.</p>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full schedule-table border-collapse">
+                    <thead>
+                        <tr>
+                            <th class="border p-3 text-left">Time</th>
+                            <th class="border p-3 text-left">Monday</th>
+                            <th class="border p-3 text-left">Tuesday</th>
+                            <th class="border p-3 text-left">Wednesday</th>
+                            <th class="border p-3 text-left">Thursday</th>
+                            <th class="border p-3 text-left">Friday</th>
+                            <th class="border p-3 text-left">Saturday</th>
+                            <th class="border p-3 text-left">Sunday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="border p-3 font-medium">8:00 AM - 10:00 AM</td>
+                            <td class="border p-3">Women's Training</td>
+                            <td class="border p-3">Women's Training</td>
+                            <td class="border p-3">Women's Training</td>
+                            <td class="border p-3">Women's Training</td>
+                            <td class="border p-3">Women's Training</td>
+                            <td class="border p-3">Women's Training</td>
+                            <td class="border p-3">Women's Training</td>
+                        </tr>
+                        <tr>
+                            <td class="border p-3 font-medium">10:00 AM - 12:00 PM</td>
+                            <td class="border p-3">Men's Training</td>
+                            <td class="border p-3">Men's Training</td>
+                            <td class="border p-3">Men's Training</td>
+                            <td class="border p-3">Men's Training</td>
+                            <td class="border p-3">Men's Training</td>
+                            <td class="border p-3">Men's Training</td>
+                            <td class="border p-3">Men's Training</td>
+                        </tr>
+                        <tr>
+                            <td class="border p-3 font-medium">4:00 PM - 6:00 PM</td>
+                            <td class="border p-3">Women's Training</td>
+                            <td class="border p-3">Women's Training</td>
+                            <td class="border p-3">Women's Training</td>
+                            <td class="border p-3">Women's Training</td>
+                            <td class="border p-3">Women's Training</td>
+                            <td class="border p-3">Women's Training</td>
+                            <td class="border p-3">Women's Training</td>
+                        </tr>
+                        <tr>
+                            <td class="border p-3 font-medium">6:00 PM - 10:00 PM</td>
+                            <td class="border p-3">Men's Training</td>
+                            <td class="border p-3">Men's Training</td>
+                            <td class="border p-3">Men's Training</td>
+                            <td class="border p-3">Men's Training</td>
+                            <td class="border p-3">Men's Training</td>
+                            <td class="border p-3">Men's Training</td>
+                            <td class="border p-3">Men's Training</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-gray-600 mt-6 text-center">* Schedule may be subject to change. Please contact us for the most up-to-date information.</p>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-24 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">What Our Members Say</h2>
+                <p class="max-w-2xl mx-auto text-gray-600">Hear from our community about their transformative experiences at XFit Gym.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg p-8 shadow-md testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <div class="mr-4">
+                            <i class="fas fa-user-circle text-4xl text-gray-400"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Ahmed M.</h4>
+                            <p class="text-gray-500 text-sm">Member since 2023</p>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600 italic">"Working with Coach Hany completely transformed my approach to fitness. The personalized attention and expert guidance have helped me achieve results I never thought possible."</p>
+                </div>
+                <div class="bg-white rounded-lg p-8 shadow-md testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <div class="mr-4">
+                            <i class="fas fa-user-circle text-4xl text-gray-400"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Sara L.</h4>
+                            <p class="text-gray-500 text-sm">Member since 2022</p>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600 italic">"The women's only sessions at XFit Gym are exactly what I needed. The supportive environment and excellent trainers have made my fitness journey enjoyable and effective."</p>
+                </div>
+                <div class="bg-white rounded-lg p-8 shadow-md testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <div class="mr-4">
+                            <i class="fas fa-user-circle text-4xl text-gray-400"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Karim T.</h4>
+                            <p class="text-gray-500 text-sm">Member since 2024</p>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star-half-alt text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600 italic">"The calisthenics program at XFit Gym is phenomenal. In just a few months, I've gained strength, flexibility, and confidence. The coaches are knowledgeable and motivating."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Membership Section -->
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Membership Plans</h2>
+                <p class="max-w-2xl mx-auto text-gray-600">Choose the membership option that fits your needs and goals.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg overflow-hidden shadow-md border border-gray-200 hover:shadow-xl transition-all">
+                    <div class="bg-gray-100 p-6">
+                        <h3 class="text-2xl font-bold text-center">Basic</h3>
+                        <div class="text-center my-6">
+                            <span class="text-6xl font-bold">1000</span>
+                            <span class="text-xl font-medium text-gray-600">EGP/mo</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Access to gym facilities</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Standard equipment usage</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Locker room access</span>
+                            </li>
+                            <li class="flex items-start text-gray-400">
+                                <i class="fas fa-times text-red-500 mt-1 mr-2"></i>
+                                <span>Personal training sessions</span>
+                            </li>
+                            <li class="flex items-start text-gray-400">
+                                <i class="fas fa-times text-red-500 mt-1 mr-2"></i>
+                                <span>Specialized programs</span>
+                            </li>
+                        </ul>
+                        <div class="mt-8">
+                            <a href="#contact" class="block w-full py-3 px-6 text-center bg-primary text-white font-medium rounded-lg hover:bg-opacity-90 transition duration-300">Join Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg overflow-hidden shadow-md border border-gray-200 hover:shadow-xl transition-all transform scale-105">
+                    <div class="bg-primary p-6 text-white">
+                        <h3 class="text-2xl font-bold text-center">Premium</h3>
+                        <div class="text-center my-6">
+                            <span class="text-6xl font-bold">1800</span>
+                            <span class="text-xl font-medium">EGP/mo</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="bg-yellow-100 text-yellow-800 text-xs font-medium px-3 py-1 rounded-full inline-block mb-6">Most Popular</div>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Access to gym facilities</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>All equipment usage</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Locker room access</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>2 Personal training sessions/month</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Access to group classes</span>
+                            </li>
+                        </ul>
+                        <div class="mt-8">
+                            <a href="#contact" class="block w-full py-3 px-6 text-center bg-primary text-white font-medium rounded-lg hover:bg-opacity-90 transition duration-300">Join Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg overflow-hidden shadow-md border border-gray-200 hover:shadow-xl transition-all">
+                    <div class="bg-gray-900 p-6 text-white">
+                        <h3 class="text-2xl font-bold text-center">Elite</h3>
+                        <div class="text-center my-6">
+                            <span class="text-6xl font-bold">2500</span>
+                            <span class="text-xl font-medium">EGP/mo</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Full access to gym facilities</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>All equipment usage</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Premium locker room access</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>8 Personal training sessions/month</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Nutrition consultation</span>
+                            </li>
+                        </ul>
+                        <div class="mt-8">
+                            <a href="#contact" class="block w-full py-3 px-6 text-center bg-primary text-white font-medium rounded-lg hover:bg-opacity-90 transition duration-300">Join Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Contact Us</h2>
+                <p class="max-w-2xl mx-auto text-gray-600">Have questions or ready to start your fitness journey? Get in touch with us.</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <form class="bg-white p-8 rounded-lg shadow-md">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
+                        <div class="mb-6">
+                            <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
+                        <div class="mb-6">
+                            <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
+                            <select id="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                                <option value="" disabled selected>Select a subject</option>
+                                <option value="membership">Membership Inquiry</option>
+                                <option value="personal">Personal Training</option>
+                                <option value="program">Program Information</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Your Message</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3 px-6 bg-primary text-white font-medium rounded-lg hover:bg-opacity-90 transition duration-300">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-info order-first lg:order-last">
+                    <div class="bg-white p-8 rounded-lg shadow-md h-full">
+                        <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                        <div class="flex items-start mb-6">
+                            <i class="fas fa-map-marker-alt text-xl text-primary mr-4 mt-1"></i>
+                            <p class="text-gray-600">63 Omar Lotfy, Al Ibrahimeyah Bahri WA Sidi Gaber, Bab Sharqi, Alexandria Governorate 5423075, Egypt, Alexandria, Egypt</p>
+                        </div>
+                        <div class="flex items-center mb-6">
+                            <i class="fas fa-phone-alt text-xl text-primary mr-4"></i>
+                            <p class="text-gray-600">+20 11 11242016</p>
+                        </div>
+                        <div class="flex items-center mb-6">
+                            <i class="fas fa-envelope text-xl text-primary mr-4"></i>
+                            <p class="text-gray-600">Xfitgym.egy00@gmail.com</p>
+                        </div>
+                        <div class="flex items-center mb-10">
+                            <i class="fas fa-clock text-xl text-primary mr-4"></i>
+                            <p class="text-gray-600">Open Daily</p>
+                        </div>
+                        <h4 class="text-xl font-bold mb-4">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://www.instagram.com/xfitgym.egy/" target="_blank" class="bg-gray-200 w-12 h-12 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+                                <i class="fab fa-instagram text-xl"></i>
+                            </a>
+                            <a href="https://m.facebook.com/XFitGym.egy/" target="_blank" class="bg-gray-200 w-12 h-12 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+                                <i class="fab fa-facebook-f text-xl"></i>
+                            </a>
+                            <a href="#" class="bg-gray-200 w-12 h-12 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+                                <i class="fab fa-twitter text-xl"></i>
+                            </a>
+                            <a href="#" class="bg-gray-200 w-12 h-12 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+                                <i class="fab fa-whatsapp text-xl"></i>
+                            </a>
+                        </div>
+                        <div class="mt-10 h-48 bg-gray-300 rounded-lg">
+                            <!-- Google Maps Embed -->
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3412.253229173906!2d29.922550076174367!3d31.213712974355765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f5c47d1c579341%3A0x40564f9ae76ad1c6!2s63%20Omar%20Lotfy%2C%20Al%20Ibrahimeyah%20Bahri%20WA%20Sidi%20Gaber%2C%20Bab%20Shar%27%2C%20Alexandria%20Governorate%205423075!5e0!3m2!1sen!2seg!4v1747914515192!5m2!1sen!2seg"
+                                width="100%" 
+                                height="100%" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade"
+                                class="rounded-lg">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="py-20 bg-primary text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-6">Ready to Transform Your Body?</h2>
+            <p class="max-w-2xl mx-auto text-xl mb-8">Join XFit Gym today and start your journey to a healthier, stronger you with our expert trainers and premium facilities.</p>
+            <a href="#contact" class="inline-block py-3 px-8 bg-white text-primary font-bold rounded-full text-lg hover:bg-gray-100 transition-all">Get Started Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">XFIT<span class="text-primary">GYM</span></h3>
+                    <p class="text-gray-400 mb-6">Alexandria's premium fitness experience for all levels. Join our community and transform your body and life with expert guidance.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/xfitgym.egy/" target="_blank" class="bg-gray-800 w-10 h-10 rounded-full flex items-center justify-center hover:bg-primary transition-all">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://m.facebook.com/XFitGym.egy/" target="_blank" class="bg-gray-800 w-10 h-10 rounded-full flex items-center justify-center hover:bg-primary transition-all">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="bg-gray-800 w-10 h-10 rounded-full flex items-center justify-center hover:bg-primary transition-all">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="bg-gray-800 w-10 h-10 rounded-full flex items-center justify-center hover:bg-primary transition-all">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition-all">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition-all">About Us</a></li>
+                        <li><a href="#programs" class="text-gray-400 hover:text-white transition-all">Programs</a></li>
+                        <li><a href="#trainers" class="text-gray-400 hover:text-white transition-all">Trainers</a></li>
+                        <li><a href="#schedule" class="text-gray-400 hover:text-white transition-all">Schedule</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-all">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-6">Programs</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#programs" class="text-gray-400 hover:text-white transition-all">Personal Training</a></li>
+                        <li><a href="#programs" class="text-gray-400 hover:text-white transition-all">CrossFit</a></li>
+                        <li><a href="#programs" class="text-gray-400 hover:text-white transition-all">Calisthenics</a></li>
+                        <li><a href="#programs" class="text-gray-400 hover:text-white transition-all">Weight Loss Programs</a></li>
+                        <li><a href="#programs" class="text-gray-400 hover:text-white transition-all">Bodybuilding</a></li>
+                        <li><a href="#programs" class="text-gray-400 hover:text-white transition-all">Women's Only Sessions</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-6">Contact</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-primary mr-3 mt-1"></i>
+                            <span class="text-gray-400">63 Omar Lotfy, Alexandria, Egypt</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt text-primary mr-3"></i>
+                            <span class="text-gray-400">+20 11 11242016</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-primary mr-3"></i>
+                            <span class="text-gray-400">Xfitgym.egy00@gmail.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-clock text-primary mr-3"></i>
+                            <span class="text-gray-400">Open Daily</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2025 XFit Gym. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition-all">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-all">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#home" class="fixed bottom-8 right-8 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-opacity-90 transition-all">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Mobile menu toggle functionality would be added here
+    </script>
+</body>
+
+</html>
